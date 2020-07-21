@@ -34,3 +34,10 @@ end
 
 kids_with_candies([2, 3, 5, 1, 3], 3) # [true, true, true, false, true]
 
+# defanging ip address
+def defang_i_paddr(address)
+    return address.split('.').join('[.]')
+end
+
+defang_i_paddr('1.1.1.1') # '1[.]1[.]1[.]1'
+
