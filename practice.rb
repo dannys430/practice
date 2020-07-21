@@ -19,3 +19,18 @@ def running_sum(nums)
     end
     return answer
 end
+
+running_sum([1, 2, 3, 4]) # [1, 3, 6, 10]
+
+# kids with candies
+def kids_with_candies(candies, extra_candies)
+    max = candies.max
+    greatest = []
+    candies.each do |candy|
+        candy + extra_candies >= max ? greatest.push(true) : greatest.push(false)
+    end
+    return greatest
+end
+
+kids_with_candies([2, 3, 5, 1, 3], 3) # [true, true, true, false, true]
+
