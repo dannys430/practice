@@ -13,16 +13,18 @@ matchTarget([2, 7, 11, 15], 9)  # [0, 1]
 
 # running sum
 def running_sum(nums)
-    answer = [nums[0]]
-    (1...nums.length).each do |i|
-        answer.push((nums[0]..nums[i]).sum)
+   answer = [nums[0]]
+    i = 1
+    while i < nums.length
+        answer.push(answer[-1] + nums[i])
+        i += 1
     end
     return answer
 end
 
 running_sum([1, 2, 3, 4]) # [1, 3, 6, 10]
 
-# kids with candies
+# 1431. kids with candies
 def kids_with_candies(candies, extra_candies)
     max = candies.max
     greatest = []
@@ -34,10 +36,23 @@ end
 
 kids_with_candies([2, 3, 5, 1, 3], 3) # [true, true, true, false, true]
 
-# defanging ip address
+# 1108. defanging ip address
 def defang_i_paddr(address)
     return address.split('.').join('[.]')
 end
 
 defang_i_paddr('1.1.1.1') # '1[.]1[.]1[.]1'
 
+# 1470. shuffle the array
+def shuffle(nums, n)
+    answer = []
+    nums.each_with_index do |num, idx|
+        if (idx < nums.length - n)
+            answer.push(num)
+            answer.push(nums[idx + n])
+        end
+    end
+    return answer
+end
+
+shuffle([2, 5, 1, 3, 4, 7], 3) # [2, 3, 5, 4, 1, 7]
