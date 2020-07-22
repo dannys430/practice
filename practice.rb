@@ -56,3 +56,19 @@ def shuffle(nums, n)
 end
 
 shuffle([2, 5, 1, 3, 4, 7], 3) # [2, 3, 5, 4, 1, 7]
+
+# hackerrank 'compare the triplets'
+def compareTriplets(a, b)
+    a_points = 0
+    b_points = 0
+    x = 0
+    while x < a.length
+        if a[x] != b[x]
+            a[x] > b[x] ? a_points += 1 : b_points += 1
+        end
+        x += 1
+    end
+    return [a_points, b_points]
+end
+
+compareTriplets([5, 6, 7], [3, 6, 10]) # [1, 1]
