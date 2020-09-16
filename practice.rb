@@ -72,3 +72,14 @@ def compareTriplets(a, b)
 end
 
 compareTriplets([5, 6, 7], [3, 6, 10]) # [1, 1]
+
+# binarysearch.io 'domino placement'
+def solve(n, m)
+    board = n * m
+    if board.odd?
+        board -= 1
+    end
+    return board / 2
+end
+
+solve(2, 2)
