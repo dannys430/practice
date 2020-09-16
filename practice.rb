@@ -83,3 +83,24 @@ def solve(n, m)
 end
 
 solve(2, 2)
+
+# binarysearch.io 'anagram checks'
+def solve(s0, s1)
+    if s0.length != s1.length
+        return false
+    end
+    hash1 = Hash.new(0)
+    hash2 = Hash.new(0)
+    
+    s0.each_char do |c1|
+        hash1[c1] += 1
+    end
+    
+    s1.each_char do |c2|
+        hash2[c2] += 1
+    end
+    
+    hash1 == hash2
+end
+
+solve("listen", "silent") # true
