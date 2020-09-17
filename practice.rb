@@ -104,3 +104,31 @@ def solve(s0, s1)
 end
 
 solve("listen", "silent") # true
+
+# binarysearch.io 'string expansion' - partial solution
+
+def solve(s)
+    answer = ""
+    arr = s.split('')
+    hash = Hash.new(0)
+    arr.each_with_index do |el, idx|
+        if el.to_i >= 1
+            if arr[idx + 1] == "("
+                el.to_i.times do 
+                    if arr[idx + 2].to_i >= 1
+                        if arr[idx + 3] == "("
+                            arr[idx + 2].to_i.times do 
+                                    answer += (arr[(idx + 4)...arr.index(")")].join(''))
+                            end
+                        end
+                    end
+                    answer += (arr[(idx + 2)...arr.index(")")].join(''))
+                end
+                
+                # hash[arr[idx + 1]] += 1
+            end
+        end
+        
+    end
+    return answer
+end
