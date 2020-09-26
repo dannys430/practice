@@ -132,3 +132,15 @@ def solve(s)
     end
     return answer
 end
+
+# binarysearch.io 'greatest common divisor'
+
+def solve(nums)
+    largest = nums.sort[-1]
+    until nums.all? {|num| num % largest == 0 }
+        largest -= 1
+    end
+    return largest
+end
+
+solve([6, 12, 9]) # 3
