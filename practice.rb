@@ -106,7 +106,6 @@ end
 solve("listen", "silent") # true
 
 # binarysearch.io 'string expansion' - partial solution
-
 def solve(s)
     answer = ""
     arr = s.split('')
@@ -134,7 +133,6 @@ def solve(s)
 end
 
 # binarysearch.io 'greatest common divisor'
-
 def solve(nums)
     largest = nums.sort[-1]
     until nums.all? {|num| num % largest == 0 }
@@ -144,3 +142,29 @@ def solve(nums)
 end
 
 solve([6, 12, 9]) # 3
+
+# binarysearch.io 'making pizza'
+class Solution
+    def solve(s)
+        hash = Hash.new(0)
+        
+        if s.include?('p') && s.include?('i') && s.include?('z') && s.include?('a')
+            s.each_char do |char|
+                if "pia".include?(char)
+                    hash[char] += 1
+                elsif "z".include?(char)
+                    hash[char] += 0.5
+                end
+            end
+        end
+       
+        if hash['p'] >= 1 && hash['i'] >= 1 && hash['z']  >= 1 && hash['a'] >= 1
+            return hash.values.min.floor
+        else
+            return 0
+        end
+
+    end
+end
+
+solve("pihzzatpizza") # 2
