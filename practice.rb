@@ -168,3 +168,19 @@ class Solution
 end
 
 solve("pihzzatpizza") # 2
+
+# binarysearch.io 'sorted elements'
+def solve(nums)
+    count = 0
+    nums_sorted = nums.sort
+    x = 0
+    while x < nums.length
+        if nums[x] == nums_sorted[x]
+            count += 1
+        end
+        x += 1
+    end
+    return count
+end
+
+solve([1, 7, 3, 4, 10]) # 2
