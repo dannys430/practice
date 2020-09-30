@@ -184,3 +184,27 @@ def solve(nums)
 end
 
 solve([1, 7, 3, 4, 10]) # 2
+
+# binarysearch.io 'word formation' - partial solution
+def solve(words, letters)
+    hash = Hash.new(0)
+    hash2 = Hash.new(0)
+    letters.each_char do |char|
+        hash[char] += 1
+    end
+    
+    longest = 0
+    
+    words.each_with_index do |word, idx|
+        word.each_char.with_index do |char, idx|
+            if !hash[char] || hash[char] <= 0
+                next
+            end
+            if hash[char] > 0
+                hash[char] -= 1
+            end
+        end
+        
+    end
+    return longest
+end
