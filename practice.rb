@@ -209,6 +209,10 @@ def solve(words, letters)
     return longest
 end
 
-###
-#
+# binarysearch.io 'hip to be square'
+def solve(nums)
+    squared = nums.map {|num| num * num}
+    return squared.sort
+end
 
+solve([-9, -2, 0, 2, 3]) # [0, 4, 4, 9, 81]
