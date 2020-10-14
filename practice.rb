@@ -216,3 +216,27 @@ def solve(nums)
 end
 
 solve([-9, -2, 0, 2, 3]) # [0, 4, 4, 9, 81]
+
+# binarysearch.io 'length of a linked list' (javascript solution)
+class LLNode {
+    constructor(val, next=null) {
+        this.val = val
+        this.next = next
+    }
+}
+ 
+solve(node) {
+    let length = 0
+    while (node != null) {
+        length++
+        node = node.next
+    }
+    return length
+}
+
+let node = 350
+solve(node) # 1
+
+let node = 12 -> 93 -> 27
+solve(node) # 3
+
