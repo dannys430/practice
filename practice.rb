@@ -240,3 +240,22 @@ solve(node) # 1
 let node = 12 -> 93 -> 27
 solve(node) # 3
 
+# binarysearch.io 'string isomorphism'
+def solve(s, t)
+    if s.length != t.length
+        return false
+    end
+    hash = Hash.new {|h, k, v| hash[k] = v}
+
+    (0...s.length).each do |i|
+        if !hash[s[i]] && !hash.values.include?(t[i])
+            hash[s[i]] = t[i]
+        elsif hash[s[i]] != t[i]
+            return false
+        end
+    end
+    true
+end
+
+solve('cat', 'foo') # false
+
