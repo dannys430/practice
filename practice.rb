@@ -286,4 +286,6 @@ solve("0.1.2.256") # false
 solve("0.1.2.+1") # false
 solve("00.1.2.3") # false
 
+# binarysearch.io 'flight itinerary'
+# You are given a list of flights that were taken, represented as origin to destination airport pairs. Given that this list was shuffled, find all the airports that were visited in the correct order.
 
