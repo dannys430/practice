@@ -259,3 +259,31 @@ end
 
 solve('cat', 'foo') # false
 
+# binarysearch.io 'IP Address'
+def solve(s)
+    s.each_char do |char|
+        if !"0123456789.".include?(char)
+            return false
+        end
+    end
+    arr = s.split(".")
+    if arr.length != 4
+        return false
+    end
+    arr.each do |el|
+        if !(el.to_i.is_a? Integer) || el.to_i > 255 || ("a".."z").include?(el)
+            return false
+        end
+        if el.length > 1 && el[1..-1].include?("0")
+            return false
+        end
+    end
+    true
+
+end
+
+solve("0.1.2.256") # false
+solve("0.1.2.+1") # false
+solve("00.1.2.3") # false
+
+
