@@ -288,7 +288,34 @@ solve("00.1.2.3") # false
 
 # binarysearch.io 'flight itinerary'
 # You are given a list of flights that were taken, represented as origin to destination airport pairs. Given that this list was shuffled, find all the airports that were visited in the correct order.
-# You are given a list of flights that were taken, represented as origin to destination airport pairs. Given that this list was shuffled, find all the airports that were visited in the correct order.
-# You are given a list of flights that were taken, represented as origin to destination airport pairs. Given that this list was shuffled, find all the airports that were visited in the correct order.
-# You are given a list of flights that were taken, represented as origin to destination airport pairs. Given that this list was shuffled, find all the airports that were visited in the correct order.
 
+
+# binarysearch.io 'minimum initial value for positive prefix sum'
+class Solution
+    def solve(nums)
+        not_done = true
+
+        min = 0
+        sum = 0
+
+        while not_done
+            not_done = false
+            
+            nums.each_with_index do |num, idx|
+                sum += min
+                sum += num
+                if sum < 0 
+                    not_done = true
+                    break
+                end
+                if sum >= 0 && idx == nums.length-1
+                    return min
+                end
+            end
+            min += 1
+            break
+        end  
+            
+
+    end
+end
