@@ -319,3 +319,35 @@ class Solution
 
     end
 end
+
+
+class Solution
+    def solve(nums)
+        not_done = true
+
+        min = 0
+        sum = 0
+
+        while not_done
+            not_done = false
+            
+            nums.each_with_index do |num, idx|
+                sum += min
+                sum += num
+                if sum < 0 
+                    not_done = true
+                    break
+                end
+                if sum >= 0 && idx == nums.length-1
+                    return min
+                end
+            end
+            min += 1
+            break
+        end  
+            
+
+    end
+end
+
+
