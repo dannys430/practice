@@ -328,5 +328,23 @@ end
 
 solve([1, 9, 1]) # [1, 9, 2]
 
+# binarysearch.io 'pythagorean triplets'
+def solve(nums)
+    arr = nums.map {|num| num * num}
+    arr.each_with_index do |el1, idx1|
+        arr.each_with_index do |el2, idx2|
+            if idx2 > idx1
+                if arr.include?(el1 + el2)
+                    if (arr.index(el1 + el2) != idx1) && (arr.index(el1 + el2) != idx2)
+                        return true
+                    end
+                end
+            end
+        end
+    end
+    false
+end
+
+solve([5, 1, 7, 4, 3]) # true
 
 
