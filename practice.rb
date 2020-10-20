@@ -321,33 +321,12 @@ class Solution
 end
 
 
-class Solution
-    def solve(nums)
-        not_done = true
-
-        min = 0
-        sum = 0
-
-        while not_done
-            not_done = false
-            
-            nums.each_with_index do |num, idx|
-                sum += min
-                sum += num
-                if sum < 0 
-                    not_done = true
-                    break
-                end
-                if sum >= 0 && idx == nums.length-1
-                    return min
-                end
-            end
-            min += 1
-            break
-        end  
-            
-
-    end
+# binarysearch.io 'add one'
+def solve(nums)
+    return (nums.join("").to_i + 1).to_s.split("").map {|n| n.to_i}
 end
+
+solve([1, 9, 1]) # [1, 9, 2]
+
 
 
