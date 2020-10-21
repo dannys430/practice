@@ -348,3 +348,12 @@ end
 solve([5, 1, 7, 4, 3]) # true
 
 
+# binarysearch.io 'rotate list left by k'
+def solve(nums, k)
+    k.times do
+        nums.push(nums.shift)
+    end
+    return nums
+end
+
+solve ([1, 2, 3, 4, 5, 6], 2) # [3, 4, 5, 6, 1, 2]
