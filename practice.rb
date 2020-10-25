@@ -357,3 +357,15 @@ def solve(nums, k)
 end
 
 solve ([1, 2, 3, 4, 5, 6], 2) # [3, 4, 5, 6, 1, 2]
+
+ solve(nums, k)
+    k.times do
+        nums.push(nums.shift)
+    end
+    return nums
+end
+
+solve ([1, 2, 3, 4, 5, 6], 2) # [3, 4, 5, 6, 1, 2]aisdjfkjosia
+jaisdofjoiasj
+sdfijaosid
+asdfijaosdf
