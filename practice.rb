@@ -358,14 +358,9 @@ end
 
 solve ([1, 2, 3, 4, 5, 6], 2) # [3, 4, 5, 6, 1, 2]
 
- solve(nums, k)
+# binary search.io 'rotate'
+def solve(n, k)
     k.times do
-        nums.push(nums.shift)
+        nums
     end
-    return nums
 end
-
-solve ([1, 2, 3, 4, 5, 6], 2) # [3, 4, 5, 6, 1, 2]aisdjfkjosia
-jaisdofjoiasj
-sdfijaosid
-asdfijaosdf
