@@ -361,6 +361,7 @@ solve ([1, 2, 3, 4, 5, 6], 2) # [3, 4, 5, 6, 1, 2]
 # binary search.io 'rotate'
 def solve(n, k)
     k.times do
-        nums
+        nums.push(nums.shift)
     end
+    return nums
 end
