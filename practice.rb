@@ -373,3 +373,22 @@ def solve(n, k)
     end
     return nums
 end
+
+# binarysearch.io 'flip and invert matrix' - partial solution
+solve(matrix) {
+    let answer = []
+    matrix.map(sub => {
+        answer.push(sub.reverse())
+    })
+    answer.forEach(sub => {
+        sub.forEach(el => {
+            if (el === 1) {
+                el = 0
+            }
+            if (el === 0) {
+                el = 1
+            }
+        })
+    })
+    return answer
+}
