@@ -366,14 +366,6 @@ def solve(n, k)
     return nums
 end
 
-# binary search.io 'rotate'
-def solve(n, k)
-    k.times do
-        nums.push(nums.shift)
-    end
-    return nums
-end
-
 # binarysearch.io 'flip and invert matrix' - partial solution
 solve(matrix) {
     let answer = []
