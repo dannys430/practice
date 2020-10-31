@@ -376,8 +376,7 @@ solve(matrix) {
         sub.forEach(el => {
             if (el === 1) {
                 el = 0
-            }
-            if (el === 0) {
+            } else if (el === 0) {
                 el = 1
             }
         })
