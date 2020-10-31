@@ -366,20 +366,18 @@ def solve(n, k)
     return nums
 end
 
-# binarysearch.io 'flip and invert matrix' - partial solution
+# binarysearch.io 'flip and invert matrix' (javascript)
 solve(matrix) {
-    let answer = []
-    matrix.map(sub => {
-        answer.push(sub.reverse())
-    })
-    answer.forEach(sub => {
-        sub.forEach(el => {
-            if (el === 1) {
-                el = 0
-            } else if (el === 0) {
-                el = 1
-            }
-        })
-    })
-    return answer
+    return matrix.map(sub => sub.reverse().map(el => el === 0 ? el = 1 : el = 0))
 }
+
+matrix = [
+    [1, 1, 0],
+    [0, 0, 1],
+    [0, 0, 0]
+]
+solve(matrix)   #[
+                #   [1, 0, 0],
+                #   [0, 1, 1],
+                #   [1, 1, 1]
+                # ]
