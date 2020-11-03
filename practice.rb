@@ -381,3 +381,10 @@ solve(matrix)   #[
                 #   [0, 1, 1],
                 #   [1, 1, 1]
                 # ]
+
+# binarysearch.io 'mixed sorting'
+Given a list of integers nums, sort the array such that:
+
+All even numbers are sorted in increasing order
+All odd numbers are sorted in decreasing order
+The relative positions of the even and odd numbers remain the same
