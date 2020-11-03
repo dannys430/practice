@@ -383,8 +383,15 @@ solve(matrix)   #[
                 # ]
 
 # binarysearch.io 'mixed sorting'
-Given a list of integers nums, sort the array such that:
-
-All even numbers are sorted in increasing order
-All odd numbers are sorted in decreasing order
-The relative positions of the even and odd numbers remain the same
+solve(nums) {
+    const even = nums.filter(x => x % 2 === 0).sort()
+    const odd = nums.filter(x => x % 2 != 0).sort().reverse()
+    return nums.map(n => {
+        if (n % 2 === 0) {
+            return even.shift()
+        } else {
+            return odd.shift()   
+        }
+    })
+}
+solve([8, 13, 11, 90, -5, 4]) # [4, 13, 11, 8, -5, 90]
