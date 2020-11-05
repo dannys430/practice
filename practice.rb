@@ -395,3 +395,17 @@ solve(nums) {
     })
 }
 solve([8, 13, 11, 90, -5, 4]) # [4, 13, 11, 8, -5, 90]
+
+# binarysearch.io 'consecutive duplicates' partial solution
+def solve(s)
+    answer = ""
+    (0...s.length - 1).each do |idx|
+        if s[idx] != s[idx + 1]
+            answer += s[idx]
+        end
+        if idx == s.length - 2 && s[idx] == s[idx + 1]
+            answer += s[idx]
+        end
+    end
+    return answer
+end
