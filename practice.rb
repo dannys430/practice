@@ -409,3 +409,22 @@ def solve(s)
     end
     return answer
 end
+
+
+# binarysearch.io 'sum of two number'
+solve(nums, k) {
+    let hashmap = {}
+    for (let i = 0; i < nums.length; i++) {
+
+        let diff = k - nums[i];
+
+        if (hashmap[diff] != null) {
+            return true
+        } else {
+            hashmap[nums[i]] = diff
+        }
+
+    }
+    return false
+}
+solve([35, 8, 18, 3, 22], 11) // true
