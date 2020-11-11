@@ -428,3 +428,8 @@ solve(nums, k) {
     return false
 }
 solve([35, 8, 18, 3, 22], 11) // true
+
+# binarysearch.io 'Remove last duplicate entries'
+Given a list of integers nums, find all duplicate numbers and delete their last occurrences.
+
+For example, given [1, 3, 4, 1, 3, 5] return [1, 3, 4, 5].
