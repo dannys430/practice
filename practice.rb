@@ -430,6 +430,24 @@ solve(nums, k) {
 solve([35, 8, 18, 3, 22], 11) // true
 
 # binarysearch.io 'Remove last duplicate entries'
-Given a list of integers nums, find all duplicate numbers and delete their last occurrences.
+def solve(nums)
+    answer = []
+    hash = Hash.new {|h, k| h[k] = [] }
+    
+    nums.each_with_index do |num, idx|
+        hash[num].push(idx)
+    end
+    
+    hash.each do |k, v|
+        if v.length > 1
+            v.pop()
+        end
+    end
+    
+    hash.values.flatten.sort.each do |idx|
+        answer.push(nums[idx])
+    end
+    return answer
+end
 
-For example, given [1, 3, 4, 1, 3, 5] return [1, 3, 4, 5].
+solve([3, 3, 0, 3, 3, 0, 1]) # [3, 3, 0, 3, 1]
