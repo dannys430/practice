@@ -451,3 +451,33 @@ def solve(nums)
 end
 
 solve([3, 3, 0, 3, 3, 0, 1]) # [3, 3, 0, 3, 1]
+
+## python solution
+def solve(self, nums):
+    dict = {}
+    
+    new_nums = []
+    
+    for idx, num in enumerate(nums, start=0):
+        if num not in dict:
+            dict[num] = []
+            dict[num].append(idx)
+        else:
+            dict[num].append(idx)
+            
+    for v in list(dict.values()):
+        if len(v) > 1:
+            v.pop()
+            
+    flattened = []
+    
+    for sub in list(dict.values()):
+        for item in sub:
+            flattened.append(item)
+            
+    for idx in sorted(flattened):
+        new_nums.append(nums[idx])
+        
+    return new_nums
+        
+solve([1, 3, 4, 1, 3, 5]) # [1, 3, 4, 5]
