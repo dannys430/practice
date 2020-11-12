@@ -481,3 +481,6 @@ def solve(self, nums):
     return new_nums
         
 solve([1, 3, 4, 1, 3, 5]) # [1, 3, 4, 5]
+
+# binarysearch.io 'pattern to word bijection'
+Given two strings s and p, return whether s follows the pattern in p. That is, return whether each character in p can map to a non-empty word such that it maps to s.
