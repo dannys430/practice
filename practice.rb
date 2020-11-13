@@ -483,4 +483,28 @@ def solve(self, nums):
 solve([1, 3, 4, 1, 3, 5]) # [1, 3, 4, 5]
 
 # binarysearch.io 'pattern to word bijection'
-Given two strings s and p, return whether s follows the pattern in p. That is, return whether each character in p can map to a non-empty word such that it maps to s.
+# Given two strings s and p, return whether s follows the pattern in p. That is, return whether each character in p can map to a non-empty word such that it maps to s.
+def solve(s, p)
+    s_arr = s.split(" ")
+    p_arr = p.split("")
+    
+    if s_arr.length != p_arr.length
+        return false
+    end
+    
+    hash = Hash.new {|h, k, v| h[k] = v}
+    
+    (0...s_arr.length).each do |i|
+        if !hash[s_arr[i]] && !hash.values.include?(p_arr[i])
+            hash[s_arr[i]] = p_arr[i]
+        end
+        if hash[s_arr[i]] && hash[s_arr[i]] != p_arr[i]
+            return false
+        end
+        if !hash[s_arr[i]] && hash.values.include?(p_arr[i])
+            return false
+        end
+    end
+    return true
+end
+solve("hello world world world hello", "abbba")
