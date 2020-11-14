@@ -508,3 +508,5 @@ def solve(s, p)
     return true
 end
 solve("hello world world world hello", "abbba")
+
+# binarysearch.io 'pair sums'
