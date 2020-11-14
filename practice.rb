@@ -510,3 +510,16 @@ end
 solve("hello world world world hello", "abbba")
 
 # binarysearch.io 'pair sums'
+def solve(self, nums):
+    evens = 0
+    odds = 0
+    
+    for n in nums:
+        if n % 2 == 0:
+            evens += 1
+        else:
+            odds += 1
+            
+    return evens * odds
+
+solve([3, 2, 4]) # 2
