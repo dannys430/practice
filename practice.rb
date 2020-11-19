@@ -523,3 +523,18 @@ def solve(self, nums):
     return evens * odds
 
 solve([3, 2, 4]) # 2
+
+# binarysearch 'interleaved string'
+solve(s0, s1) {
+    let new_str = ""
+    for(let i = 0; i < s0.length || i < s1.length; i++) {
+        if (s0[i]) {
+            new_str += s0[i]
+        }
+        if (s1[i]) {
+            new_str += s1[i]
+        }
+    }
+    return new_str
+}
+solve('abc', 'xyz') // 'axbycz'
