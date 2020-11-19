@@ -525,6 +525,7 @@ def solve(self, nums):
 solve([3, 2, 4]) # 2
 
 # binarysearch 'interleaved string'
+# js solution
 solve(s0, s1) {
     let new_str = ""
     for(let i = 0; i < s0.length || i < s1.length; i++) {
@@ -538,3 +539,18 @@ solve(s0, s1) {
     return new_str
 }
 solve('abc', 'xyz') // 'axbycz'
+
+# python solution
+def solve(self, s0, s1):
+    new_str = ''
+    
+    longest = len(max([s0, s1], key=len))
+    for x in range(longest):
+        if x < len(s0):
+            new_str += s0[x]
+        if x < len(s1):
+            new_str += s1[x]
+            
+    return new_str
+    
+solve('abc', 'xyz') # 'axbycz'
