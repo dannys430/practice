@@ -554,3 +554,16 @@ def solve(self, s0, s1):
     return new_str
     
 solve('abc', 'xyz') # 'axbycz'
+
+
+# binary search 'compress string'
+def solve(s)
+    new_str = ''
+    s.each_char do |char|
+        if new_str[-1] != char
+            new_str += char
+        end
+    end
+    return new_str
+end
+solve('aaaaaabbbbccccaaaaddf') # 'abcadf'
