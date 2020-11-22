@@ -570,3 +570,15 @@ solve('aaaaaabbbbccccaaaaddf') # 'abcadf'
 
 # binary search 'big numbers'
 # Given a two-dimensional integer matrix, return the total number of integers whose value is the largest in its row and in its column. For example, given
+def solve(matrix)
+    
+    count = 0
+    (0...matrix.length).each do |i1|
+        largest_row_idx = matrix[i1].index(matrix[i1].max)
+        unless matrix[i1].max < matrix[i1][largest_row_idx]
+            count += 1
+        end
+            
+    end
+    return count     
+end
