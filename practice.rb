@@ -584,3 +584,17 @@ def solve(matrix)
 end
 
 # binarysearch '3-6-9'
+def solve(n)
+    answer = []
+    (1..n).each do |num|
+        if num % 3 == 0 || num.to_s.include?('3') || num.to_s.include?('6') || num.to_s.include?('9')
+            answer.push('clap')
+        else
+            answer.push(num.to_s)
+        end
+    end
+    
+    return answer
+end
+solve(16) # ["1", "2", "clap", "4", "5", "clap", "7", "8", "clap", "10", "11", "clap", "clap", "14", "clap", "clap"]
+
