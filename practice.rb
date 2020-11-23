@@ -582,3 +582,5 @@ def solve(matrix)
     end
     return count     
 end
+
+# binarysearch '3-6-9'
