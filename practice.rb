@@ -598,3 +598,30 @@ def solve(n)
 end
 solve(16) # ["1", "2", "clap", "4", "5", "clap", "7", "8", "clap", "10", "11", "clap", "clap", "14", "clap", "clap"]
 
+# javascript solution
+solve(n) {
+    let answer = []
+    for(let i = 1; i <= n; i++) {
+        if (i % 3 === 0 || i.toString().includes('3') || i.toString().includes('6') || i.toString().includes('9')) {
+            answer.push('clap')
+        } else {
+            answer.push(i.toString())
+        }
+    }
+    return answer
+}
+solve(16) # ["1", "2", "clap", "4", "5", "clap", "7", "8", "clap", "10", "11", "clap", "clap", "14", "clap", "clap"]
+ 
+# python solution
+def solve(self, n):
+    answer = []
+    for i in range(1, n + 1):
+        if i % 3 == 0 or '3' in str(i) or '6' in str(i) or '9' in str(i):
+            answer.append('clap')
+        else:
+            answer.append(str(i))
+    
+    return answer
+
+solve(16) # ["1", "2", "clap", "4", "5", "clap", "7", "8", "clap", "10", "11", "clap", "clap", "14", "clap", "clap"]
+    
