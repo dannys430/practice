@@ -627,3 +627,7 @@ solve(16) # ["1", "2", "clap", "4", "5", "clap", "7", "8", "clap", "10", "11", "
     
 
 # binarysearch.io 'chunky strings'
+
+def solve(s, n)
+
+end
