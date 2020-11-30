@@ -631,3 +631,6 @@ solve(16) # ["1", "2", "clap", "4", "5", "clap", "7", "8", "clap", "10", "11", "
 def solve(s, n)
 
 end
+
+# binarysearch.io 'camelCase'
+# Given a list of strings words, concatenate the strings in camel case format.
