@@ -634,3 +634,20 @@ end
 
 # binarysearch.io 'camelCase'
 # Given a list of strings words, concatenate the strings in camel case format.
+def solve(words)
+    answer = ""
+    words.each_with_index do |word, idx|
+        if words.length > 1
+            if idx < 1
+                answer += (word.downcase)
+            else
+                answer += (word[0].upcase + word[1..-1].downcase)
+            end
+        else
+            answer += (word.downcase)
+        end
+    end
+    return answer
+end
+solve(["java", "beans"]) # "javaBeans"
+
