@@ -651,3 +651,35 @@ def solve(words)
 end
 solve(["java", "beans"]) # "javaBeans"
 
+# binarysearch.io 'longest increasing subsequence' partial solution
+
+def solve(nums)
+    if nums.length <= 1
+        return nums.length
+    elsif nums.length == 2 && nums[0] > nums[1]
+        return 1
+    end
+    
+    count = 2
+    current = nil
+    
+    (0...nums.length - 1).each do |i|
+        if current
+            if (nums[i + 1] > nums[i] && nums[i] > current)
+                current = nums[i]
+                count += 1
+            elsif nums[i + 1] < nums[i]
+                current = nil
+                count = 2
+            end
+        else
+            if nums[i + 1] > nums[i]
+                current = nums[i]
+                count += 2
+            end
+        end
+    end
+    
+    return count
+end
+
