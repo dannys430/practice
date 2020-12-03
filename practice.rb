@@ -689,3 +689,13 @@ def solve(nums)
     return sorted[-1] > sorted[-2] * 2 ? true : false
 end
 solve([3, 6, 9]) #false
+
+# binarysearch.io 'subsequence strings'
+def solve(s1, s2)
+    s1_arr = s1.split('')
+    s2.each_char do |char|
+        char == s1_arr[0] ? s1_arr.shift : nil
+    end
+    return s1_arr.length == 0 ? true : false
+end
+solve('ale', 'apple') #true
