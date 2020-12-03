@@ -683,3 +683,9 @@ def solve(nums)
     return count
 end
 
+# binarysearch.io 'largest number by two times'
+def solve(nums)
+    sorted = nums.sort
+    return sorted[-1] > sorted[-2] * 2 ? true : false
+end
+solve([3, 6, 9]) #false
