@@ -699,3 +699,27 @@ def solve(s1, s2)
     return s1_arr.length == 0 ? true : false
 end
 solve('ale', 'apple') #true
+
+# binarysearch.io 'generate primes'
+def solve(n)
+    primes = []
+    (2..n).each do |num|
+        if prime?(num)
+            primes.push(num)
+        end
+    end
+    return primes
+end
+
+# helper function
+def prime?(n)
+    return false if n < 2
+    (2...n).each do |num|
+        if n % num == 0
+            return false
+        end
+    end
+    return true
+end
+
+solve(10) # [2, 3, 5, 7]
