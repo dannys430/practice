@@ -723,3 +723,11 @@ def prime?(n)
 end
 
 solve(10) # [2, 3, 5, 7]
+
+# binarysearch.io  'rain catcher'
+# You are given a list of non-negative integers nums where each element represents the height of a hill. Suppose it will rain and all the spaces between two sides get filled up.
+# Return the amount of rain that would be caught between the hills.
+
+def solve(nums)
+
+end
