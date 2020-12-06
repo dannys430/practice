@@ -731,3 +731,16 @@ solve(10) # [2, 3, 5, 7]
 def solve(nums)
 
 end
+
+# binarysearch.io 'make strings same'
+def solve(s, t)
+    hash1 = Hash.new(0)
+    hash2 = Hash.new(0)
+    s.each_char do |char|
+        hash1[char] += 1
+    end
+    t.each_char do |char|
+        hash2[char] += 1
+    end
+    hash1 == hash2
+end
