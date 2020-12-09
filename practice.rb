@@ -809,3 +809,17 @@ def solve(s0, s1)
     return false
 end
 solve("Cattywampus", "sCattywampu") # true
+
+# binarysearch.io 'group string into chunks'
+def solve(s, n)
+    answer = []
+    
+    while s.length > 0
+        answer.push(s[0...n])
+        s[0...n] = ''
+    end
+    return answer
+end
+s = "abcdefg"
+n = 3
+solve(s, n) # ["abc", "def", "g"]
