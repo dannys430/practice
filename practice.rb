@@ -808,7 +808,4 @@ def solve(s0, s1)
     end
     return false
 end
-
-s0 = "Cattywampus"
-s1 = "sCattywampu"
-solve(s0, s1) # true
+solve("Cattywampus", "sCattywampu") # true
