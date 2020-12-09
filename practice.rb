@@ -790,3 +790,25 @@ const twoSum2 = (array, target) => {
   return []
 }
 console.log(twoSum2(array, target)) // answer: [11, -1]
+
+# binarysearch 'rotation of another string'
+def solve(s0, s1)
+    # shift and push the first letter of the array length number of times
+    # check if s0 == s1 each time
+    return true if s0 == s1
+    
+    rotations = s0.length
+    
+    s0_arr = s0.split('')
+    s1_arr = s1.split('')
+    until s0_arr == s1_arr || rotations == 0
+        s0_arr == s0_arr.push(s0_arr.shift)
+        rotations -= 1
+        return true if s0_arr == s1_arr
+    end
+    return false
+end
+
+s0 = "Cattywampus"
+s1 = "sCattywampu"
+solve(s0, s1) # true
