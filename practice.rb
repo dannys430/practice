@@ -823,3 +823,17 @@ end
 s = "abcdefg"
 n = 3
 solve(s, n) # ["abc", "def", "g"]
+
+# algoexpert 'validate subsequence'
+function isValidSubsequence(array, sequence) {
+  # Write your code here.
+	array.forEach(el => {
+		if (el == sequence[0]) {
+			sequence.shift()
+		}
+	})
+	return sequence.length == 0 ? true : false
+}
+array = [5, 1, 22, 25, 6, -1, 8, 10]
+sequence = [1, 6, -1, 10]
+isValidSubsequence(array, sequence) # true
