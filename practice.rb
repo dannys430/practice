@@ -837,4 +837,16 @@ function isValidSubsequence(array, sequence) {
 array = [5, 1, 22, 25, 6, -1, 8, 10]
 sequence = [1, 6, -1, 10]
 isValidSubsequence(array, sequence) # true
-isValidSubsequence(array, sequence) # true
+
+# binarysearch.io '3 and 7'
+def solve(n)
+    x = 0
+    while x <= n
+        if (n - x) % 3 == 0
+            return true
+        end
+        x += 7
+    end
+    return false
+end
+solve(13) # true
