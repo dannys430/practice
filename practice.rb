@@ -850,3 +850,4 @@ def solve(n)
     return false
 end
 solve(13) # true
+solve(14) # 
