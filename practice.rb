@@ -850,4 +850,6 @@ def solve(n)
     return false
 end
 solve(13) # true
-solve(14) # 
+
+# binarysearch.io 'penny for your thoughts'
+# Given a positive integer n representing the amount of cents you have, return the formatted currency amount. For example, given n = 123456, return "1,234.56".
