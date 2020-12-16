@@ -886,3 +886,13 @@ solve(n) {
         return (n / 100).toString()
     }
 }
+
+# leetcode '28. implement strStr()'
+# Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack. Return 0 if needle is an empty string.
+var strStr = function(haystack, needle) {
+    if (needle.length == 0) return 0
+    return haystack.indexOf(needle)
+};
+let haystack = 'hello'
+let needle = 'll'
+strStr(haystack, needle) # 2
