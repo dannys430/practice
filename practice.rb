@@ -853,3 +853,19 @@ solve(13) # true
 
 # binarysearch.io 'penny for your thoughts'
 # Given a positive integer n representing the amount of cents you have, return the formatted currency amount. For example, given n = 123456, return "1,234.56".
+def solve(n)
+    if n.to_s.length >= 6
+        num = n.to_s[0..-3] + '.' + n.to_s[-2..-1]
+        int_length = num.index('.')
+        until int_length <= 3
+            comma_idx = int_length - 3
+            num = num[0...comma_idx] + ',' + num[comma_idx..-1]
+            int_length -= 3
+        end
+        return num
+    else
+        return (n.to_f / 100).to_s
+    end
+end
+solve(132) # '1.32
+solve(100000000) # '1,000,000.00'
