@@ -853,6 +853,7 @@ solve(13) # true
 
 # binarysearch.io 'penny for your thoughts'
 # Given a positive integer n representing the amount of cents you have, return the formatted currency amount. For example, given n = 123456, return "1,234.56".
+# ruby solution
 def solve(n)
     if n.to_s.length >= 6
         num = n.to_s[0..-3] + '.' + n.to_s[-2..-1]
@@ -869,3 +870,19 @@ def solve(n)
 end
 solve(132) # '1.32
 solve(100000000) # '1,000,000.00'
+
+# javascript solution
+solve(n) {
+    let nString = n.toString()
+    let nFloat = nString.slice(0, nString.length - 2) + '.' + nString.slice(nString.length - 2, nString.length)
+    let intLength = nFloat.indexOf('.')
+    if (nString.length >= 6) {
+        for(let i = intLength; i > 3; i-=3) {
+            let commaIdx = i - 3
+            nFloat = nFloat.slice(0, commaIdx) + ',' + nFloat.slice(commaIdx, nFloat.length)
+        }
+        return nFloat
+    } else {
+        return (n / 100).toString()
+    }
+}
