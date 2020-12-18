@@ -898,3 +898,17 @@ let needle = 'll'
 strStr(haystack, needle) # 2
 
 # binarysearch.io 'longest common prefix'
+def solve(words)
+    x = 0
+    while x < words.max.length
+        equal = words.all? do |word|
+            word[0..x] == words[0][0..x]
+        end
+        if equal == false
+            return words[0][0...x]
+        end
+        x += 1
+    end
+end
+words = ["anthony", "ant", "antigravity"]
+solve(words) # 'ant'
