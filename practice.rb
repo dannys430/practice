@@ -896,3 +896,5 @@ var strStr = function(haystack, needle) {
 let haystack = 'hello'
 let needle = 'll'
 strStr(haystack, needle) # 2
+
+# binarysearch.io 'longest common prefix'
