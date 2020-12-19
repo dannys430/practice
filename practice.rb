@@ -912,3 +912,4 @@ def solve(words)
 end
 words = ["anthony", "ant", "antigravity"]
 solve(words) # 'ant'
+solve(words) # 'ant'
