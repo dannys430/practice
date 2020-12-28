@@ -912,4 +912,15 @@ def solve(words)
 end
 words = ["anthony", "ant", "antigravity"]
 solve(words) # 'ant'
-solve(words) # 'ant'
+
+# binarysearch.io 'string clockwise shift' - partial solution
+def solve(a, b, k)
+    alpha = ('a'..'z').to_a
+    count = 0
+    a.each_char.with_index do |char, idx|
+        a_idx = alpha.index(char)
+        b_idx = alpha.index(b[idx])
+        count += b_idx - a_idx
+    end
+    return count === k
+end
