@@ -916,11 +916,13 @@ solve(words) # 'ant'
 # binarysearch.io 'string clockwise shift' - partial solution
 def solve(a, b, k)
     alpha = ('a'..'z').to_a
-    count = 0
     a.each_char.with_index do |char, idx|
-        a_idx = alpha.index(char)
-        b_idx = alpha.index(b[idx])
-        count += b_idx - a_idx
+        temp = char
+        until temp == b[idx]
+            k -= 1
+            temp = alpha[(alpha.index(temp) + 1) % alpha.length]
+        end
     end
-    return count === k
+    return k >= 0
 end
+solve("xyz", "zzz", 3) # true
