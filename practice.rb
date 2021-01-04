@@ -929,3 +929,27 @@ solve("xyz", "zzz", 3) # true
 
 # binarysearch.io 'longest alliteration'
 # Given a list of lowercase alphabet strings words, return the length of the longest contiguous sublist where all words share the same first letter.
+
+def solve(words)
+    return 0 if words.length == 0
+
+    longest_sublist = 1
+    current_sublist = 1
+
+    i = 0
+    while i < words.length - 1
+        if words[i][0] == words[i+1][0]
+            current_sublist += 1
+            if current_sublist > longest_sublist
+                longest_sublist = current_sublist
+            end
+        else
+            current_sublist = 1
+        end
+        i += 1
+    end
+
+    return longest_sublist
+end
+words = ["she", "sells", "seashells", "he", "sells", "clams"]
+solve(words) # 3
