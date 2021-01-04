@@ -1026,7 +1026,21 @@ heights = [1, 5, 5, 2, 3]
 solve(heights) # [2, 4]
 
 # binarysearch.io 'palindromic integer'
+# Given a non-negative integer num, return whether it is a palindrome.
 def solve(num)
     return num.to_s == num.to_s.reverse
 end
 solve(121) # true
+
+# binarysearch.io 'atbash cipher'
+# You are given a lowercase alphabet string text. Return a new string where every character in text is mapped to its reverse in the alphabet, so that a becomes z, b becomes y, c becomes x, and so on.
+def solve(text)
+    alpha = ('a'..'z').to_a
+    answer = ''
+    text.each_char do |char|
+        new_idx = (alpha.length - 1) - alpha.index(char)
+        answer += alpha[new_idx]
+    end
+    return answer
+end
+solve("abcdef") # "zyxwvu"
