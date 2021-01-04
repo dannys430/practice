@@ -1006,3 +1006,21 @@ def solve(nums)
 end
 nums = [4, 1, 2, 8, 9, 10]
 solve(nums) # 4
+
+# binarysearch.io 'unobstructed buildings'
+def solve(heights)
+    indices = []
+    highest = 0
+
+    i = heights.length - 1
+    while i >= 0
+        if heights[i] > highest
+            highest = heights[i]
+            indices.push(i)
+        end
+        i -= 1
+    end
+    return indices.reverse
+end
+heights = [1, 5, 5, 2, 3]
+solve(heights) # [2, 4]
