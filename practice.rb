@@ -954,7 +954,7 @@ end
 words = ["she", "sells", "seashells", "he", "sells", "clams"]
 solve(words) # 3
 
-# binarysearch.io
+# binarysearch.io 'acronym'
 # Given a string s representing a phrase, return its acronym. Acronyms should be capitalized and should not include the word "and".
 
 def solve(s)
@@ -970,3 +970,23 @@ def solve(s)
 end
 s = "For your information"
 solve(s) # "FYI"
+
+# binarysearch.io 'vowels and consonants sort'
+# Given a lowercase alphabet string s, return a string with all the vowels of s in sorted order followed by all the consonants of s in sorted order.
+def solve(s)
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    s_vow = []
+    s_con = []
+    
+    s.each_char do |char|
+        if vowels.include?(char)
+            s_vow.push(char)
+        else
+            s_con.push(char)
+        end
+    end
+
+    return s_vow.sort.join("") + s_con.sort.join("")
+end
+s = "decalin"
+solve(s) # 'aeicdln
