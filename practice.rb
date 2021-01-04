@@ -953,3 +953,20 @@ def solve(words)
 end
 words = ["she", "sells", "seashells", "he", "sells", "clams"]
 solve(words) # 3
+
+# binarysearch.io
+# Given a string s representing a phrase, return its acronym. Acronyms should be capitalized and should not include the word "and".
+
+def solve(s)
+    s_arr = s.split(" ")
+    acro = ""
+    s_arr.each do |word|
+        if word.downcase != 'and'
+            acro += word[0].upcase
+        end
+    end
+
+    return acro
+end
+s = "For your information"
+solve(s) # "FYI"
