@@ -990,3 +990,19 @@ def solve(s)
 end
 s = "decalin"
 solve(s) # 'aeicdln
+
+# binarysearch.io 'largest gap'
+# Given a list of integers nums, return the largest difference of two consecutive integers in the sorted version of nums.
+def solve(nums)
+    sorted = nums.sort
+    largest = 0
+    (0...sorted.length - 1).each do |i|
+        if (sorted[i+1] - sorted[i]) > largest
+            largest = (sorted[i+1] - sorted[i])
+        end
+    end
+    return largest
+
+end
+nums = [4, 1, 2, 8, 9, 10]
+solve(nums) # 4
