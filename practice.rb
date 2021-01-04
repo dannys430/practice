@@ -1024,3 +1024,9 @@ def solve(heights)
 end
 heights = [1, 5, 5, 2, 3]
 solve(heights) # [2, 4]
+
+# binarysearch.io 'palindromic integer'
+def solve(num)
+    return num.to_s == num.to_s.reverse
+end
+solve(121) # true
