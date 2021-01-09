@@ -1044,3 +1044,71 @@ def solve(text)
     return answer
 end
 solve("abcdef") # "zyxwvu"
+
+# leetcode #772 'Basic Calculator III'  partial javascript solution
+function Calculator(str) {
+    let sign = 1
+    let sum = 0
+    const stack = []
+
+    for(let i = 0; i < str.length; i++) {
+        // if the character is a number
+        if(parseInt(str[i]) >= 0 && parseInt(str[i]) <= 9) {
+            let num = 0
+            // account for numbers with multiple digits
+            while(i < str.length && parseInt(str[i]) >= 0 && parseInt(str[i]) <= 9) {
+                num = num * 10 + parseInt(str[i])
+                i++
+            }
+            sum += num * sign
+            i--
+        } else if(str[i] === '+') {
+            // add
+            sign = 1
+        } else if(str[i] === '-') {
+            // subtract
+            sign = -1
+        } else if(str[i] === '*') {
+            // multiply
+            sign = sum
+            sum = 0
+        } else if(str[i] === '/') { // divide
+            if(parseInt(str[i+1]) >= 0 && parseInt(str[i+1]) <= 9) {
+                let j = i+1
+                let num2 = 0
+                while(j < str.length && parseInt(str[j]) >= 0 && parseInt(str[j]) <= 9) {
+                    num2 = num2 * 10 + parseInt(str[j])
+                    j++
+                }
+                sum = sum / num2
+                i++
+            }
+            // partial solution if there is a multi-digit number to right of '/'
+            // let j = i+1
+            // if(parseInt(str[j]) >= 0 && parseInt(str[j]) <= 9) {
+            //    let num2 = 0
+            //    // account for numbers with multiple digits
+            //    while(parseInt(str[j]) >= 0 && parseInt(str[j]) <= 9) {
+            //        num2 = num2 * 10 + parseInt(str[j])
+            //        j++
+            //        i++
+            //    }
+            //    sign = sum / num2
+            // }
+        } else if(i < str.length && str[i] === ')' && str[i+1] === '(') {
+            // multiply
+            sign = sum
+            sum = 0
+        } else if(str[i] === '(') {
+            stack.push(sum)
+            stack.push(sign)
+            sum = 0
+            sign = 1
+        } else if(str[i] === ')') {
+            sum = sum * stack.pop()
+            sum += stack.pop()
+        }
+    }
+
+    return sum
+}
