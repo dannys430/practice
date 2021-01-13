@@ -1112,3 +1112,18 @@ function Calculator(str) {
 
     return sum
 }
+
+# binarysearch.io 'consecutive duplicates' javascript solution
+solve(s) {
+    let answer = ''
+    for(let i = 0; i < s.length; i++) {
+        let char = s[i]
+        if(char == s[i+1]) {
+            continue
+        } else {
+            answer += s[i]
+        }
+    }
+    return answer
+}
+solve('YYYXYXX') # 'YXYX'
