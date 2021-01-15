@@ -71,3 +71,14 @@ function threeNumberSum(array, targetSum) {
 const array = [12, 3, 1, 2, -6, 5, -8, 6]
 const target = 0
 console.log(threeNumberSum(array, target)) // [[-8, 2, 6], [-8, 3, 5], [-6, 1, 5]]
+
+// binarysearch.io 'Repeated Addition' 
+const solve = (n) => {
+    if(n.toString().split('').reduce((a,b) => parseInt(a) + parseInt(b)) >= 10) {
+        n = n.toString().split('').reduce((a,b) => parseInt(a) + parseInt(b))
+        return this.solve(n)
+    } else {
+        return n.toString().split('').reduce((a,b) => parseInt(a) + parseInt(b))
+    }
+}
+solve(8835) // 6
