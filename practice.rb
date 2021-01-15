@@ -1127,3 +1127,19 @@ solve(s) {
     return answer
 }
 solve('YYYXYXX') # 'YXYX'
+
+# binarysearch.io 'counting dinosaurs'
+def solve(animals, dinosaurs)
+    count = 0
+    dino_hash = Hash.new(0)
+    dinosaurs.each_char do |char|
+        dino_hash[char] += 1
+        if dino_hash[char] == 1
+            count += animals.count(char)
+        end
+    end
+    return count
+end
+animals = "abacabC"
+dinosaurs = "bC"
+solve(animals, dinosaurs) # 3
