@@ -82,3 +82,50 @@ const solve = (n) => {
     }
 }
 solve(8835) // 6
+
+// algoexpert 'Branch Sums' javascript solution
+class BinaryTree {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+const branchSums = (root) => {
+  // Write your code here.
+	let sums = []
+	calculateBranchSums(root, 0, sums)
+	return sums
+}
+
+const calculateBranchSums = (node, runningSum, sums) => {
+	let newRunningSum = node.value + runningSum
+	if(node.left === null && node.right === null) {
+		sums.push(newRunningSum)
+		return
+	}
+	
+	if(node.left) calculateBranchSums(node.left, newRunningSum, sums)
+	if(node.right) calculateBranchSums(node.right, newRunningSum, sums)
+}
+
+let tree = 
+{
+  "tree": {
+    "nodes": [
+      {"id": "1", "left": "2", "right": "3", "value": 1},
+      {"id": "2", "left": "4", "right": "5", "value": 2},
+      {"id": "3", "left": "6", "right": "7", "value": 3},
+      {"id": "4", "left": "8", "right": "9", "value": 4},
+      {"id": "5", "left": "10", "right": null, "value": 5},
+      {"id": "6", "left": null, "right": null, "value": 6},
+      {"id": "7", "left": null, "right": null, "value": 7},
+      {"id": "8", "left": null, "right": null, "value": 8},
+      {"id": "9", "left": null, "right": null, "value": 9},
+      {"id": "10", "left": null, "right": null, "value": 10}
+    ],
+    "root": "1"
+  }
+}
+branchSums(root) // [15, 16, 18, 10, 11]
