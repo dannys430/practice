@@ -129,3 +129,25 @@ let tree =
   }
 }
 branchSums(root) // [15, 16, 18, 10, 11]
+
+// binarysearch.io 'longest consecutive duplicate string'
+solve(s) {
+    if(!s.length) return 0
+    let lengthsArr = []
+    let length = 1
+
+    let i = 0
+    while(i < s.length) {
+        let char = s[i]
+        if(char === s[i+1]) {
+            length += 1
+        } else if(char !== s[i+1]) {
+            lengthsArr.push(length)
+            char = s[i+1]
+            length = 1
+        }
+        i++
+    }
+    return Math.max(...lengthsArr)
+}
+solve('aaabbbb') // 4
