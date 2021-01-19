@@ -151,3 +151,6 @@ solve(s) {
     return Math.max(...lengthsArr)
 }
 solve('aaabbbb') // 4
+
+
+// binarysearch.io 'ancient astronaut theory' 
