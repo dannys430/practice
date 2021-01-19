@@ -154,3 +154,5 @@ solve('aaabbbb') // 4
 
 
 // binarysearch.io 'ancient astronaut theory' 
+solve(dictionary, s) {
+}
