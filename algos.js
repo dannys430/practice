@@ -163,3 +163,21 @@ const solve = (nums) => {
     return max > min ? max : min
 }
 solve([5, 1, 7]) // 35
+
+// binarysearch.io 'removing parenthesis'
+const solve = (s) => {
+    let opening = 0
+    let invalid = 0
+
+    for(let i = 0; i < s.length; i++) {
+        if(opening === 0 && s[i] === ')') {
+            invalid += 1
+        } else if(opening > 0 && s[i] === ')') {
+            opening -= 1
+        } else if(s[i] === '(') {
+            opening += 1
+        }
+    }
+    return opening + invalid
+}
+solve('()())()') // 1
