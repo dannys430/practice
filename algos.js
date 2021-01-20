@@ -153,6 +153,13 @@ solve(s) {
 solve('aaabbbb') // 4
 
 
-// binarysearch.io 'ancient astronaut theory' 
-solve(dictionary, s) {
+// binarysearch.io 'max product of two numbers'
+const solve = (nums) => {
+    if (nums.length === 1) return nums[0]
+    if (nums.length === 2) return nums[0] * nums[1]
+    let sorted = nums.sort((a, b) => a - b)
+    let max = sorted[sorted.length - 1] * sorted[sorted.length - 2]
+    let min = sorted[0] * sorted[1]
+    return max > min ? max : min
 }
+solve([5, 1, 7]) // 35
