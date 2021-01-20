@@ -181,3 +181,14 @@ const solve = (s) => {
     return opening + invalid
 }
 solve('()())()') // 1
+
+// binarysearch.io '123 number flip'
+const solve = (n) => {
+  const nString = n + ''
+  let variations = []
+  for(let i = 0; i < nString.length; i++) {
+      variations.push(parseInt(nString.slice(0, i) + '3' + nString.slice(i+1, nString.length)))
+  }
+  return Math.max(...variations)
+}
+solve(123) // 323
