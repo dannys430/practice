@@ -1143,3 +1143,33 @@ end
 animals = "abacabC"
 dinosaurs = "bC"
 solve(animals, dinosaurs) # 3
+
+# binarysearch.io 'common words'
+def solve(s0, s1)
+    count = 0
+
+    hash0 = Hash.new(0)
+    hash1 = Hash.new(0)
+
+    arr0 = s0.split(' ')
+    arr1 = s1.split(' ')
+
+    arr0.each do |word|
+        hash0[word.downcase] += 1
+    end
+
+    arr1.each do |word|
+        hash1[word.downcase] += 1
+    end
+
+    hash1.each do |k, v|
+        if hash0[k] > 0
+            count += 1
+        end
+    end
+
+    return count
+end
+s0 = "hello world hello oyster"
+s1 = "world is your oyster"
+solve(s0, s1) # 2
