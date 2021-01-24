@@ -11,3 +11,4 @@ def solve(self, n):
     return variations[-1]
 
 solve(123) # 323
+solve(223) # 323
