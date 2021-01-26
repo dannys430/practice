@@ -1173,3 +1173,15 @@ end
 s0 = "hello world hello oyster"
 s1 = "world is your oyster"
 solve(s0, s1) # 2
+
+# binarysearch.io 'fixed point'
+def solve(nums)
+    nums.each_with_index do |n, i|
+        if nums[i] == i
+            return i
+        end
+    end
+    return -1
+end
+nums = [-5, -2, 0, 3, 4]
+solve(nums) # 3
