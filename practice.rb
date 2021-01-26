@@ -1185,3 +1185,19 @@ def solve(nums)
 end
 nums = [-5, -2, 0, 3, 4]
 solve(nums) # 3
+
+# binarysearch.io 'hoppable'
+ def solve(nums)
+    steps_available = 0
+    x = 0
+    while x < nums.length
+        if x > steps_available
+            return false
+        end
+        steps_available = [x + nums[x], steps_available].max
+        x += 1
+    end
+    return true
+end
+nums = [2, 4, 0, 1, 0]
+solve(nums) # true
