@@ -1204,5 +1204,38 @@ solve(nums) # true
 
 # binarysearch.io 'equivalent pairs'
 def solve(nums)
-        
+    count = Hash.new(0)
+    #'3': 2
+    #'2': 3
+    pairs = Hash.new(0) 
+    #'3': 1
+    #'2': 3
+    (0...nums.length).each do |i|
+        num_str = nums[i].to_s
+        count[num_str] += 1
+        if count[num_str] == 2
+            pairs[num_str] = 1
+        end
+        if count[num_str] > 2
+            pairs[num_str] = (count[num_str] - 1) + pairs[num_str]
+        end
+    end
+    return pairs.values.sum
 end
+nums = [3, 2, 3, 2, 2]
+solve(nums) # 4
+# nums = [4, 4]
+# 4: (0, 1)
+
+# nums = [4, 4, 4]
+# 4: (0, 1), (0, 2),                 (1, 2)
+
+# nums = [4, 4, 4, 4]
+# 4: (0, 1), (0, 2), (0, 3),         (1, 2), (1, 3),         (2, 3)
+
+# nums = [4, 4, 4, 4, 4]
+# 4: (0, 1), (0, 2), (0, 3), (0, 4),         (1, 2), (1, 3), (1, 4),         (2, 3), (2, 4),         (3, 4)
+
+# nums = [4, 4, 4, 4, 4, 4]
+# 4: (0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (1, 2), (1, 3), (1, 4), (1, 5), (2, 3), (2, 4), (2, 5), (3, 4), (3, 5), (4, 5)
+
