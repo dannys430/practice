@@ -1239,3 +1239,44 @@ solve(nums) # 4
 # nums = [4, 4, 4, 4, 4, 4]
 # 4: (0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (1, 2), (1, 3), (1, 4), (1, 5), (2, 3), (2, 4), (2, 5), (3, 4), (3, 5), (4, 5)
 
+# binarysearch.io 'sum of sublist range sum'
+def solve(nums, i, j)
+    a = []
+    x = 0
+    y = 0
+    count = 0
+    while x < nums.length || y < nums.length
+        a.push(nums[x..y].sum)
+        x += 1
+        y += 1
+        if y >= nums.length
+            count += 1
+            x = 0
+            y = 0 + count
+        end
+        if count == nums.length
+            break
+        end
+    end
+    a_sorted = a.sort
+    return a_sorted[i..j].sum
+end
+nums = [1, 2, 3, 4]
+i = 2
+j = 3
+solve(nums, i, j) # 6
+
+# [1, 2, 3, 4]
+# [1]             1
+#    [2]          2
+#       [3]       3
+#          [4]    4
+# [1, 2]          3
+#    [2, 3]       5
+#       [3, 4]    7
+# [1, 2, 3]       6
+#    [2, 3, 4]    9
+# [1, 2, 3, 4]    10
+
+# [1, 2, 3, 4, 3, 5, 7, 6, 9, 10]  <- unsorted
+# [1, 2, 3, 3, 4, 5, 6, 7, 9, 10]  <- sorted
