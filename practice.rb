@@ -1201,3 +1201,8 @@ solve(nums) # 3
 end
 nums = [2, 4, 0, 1, 0]
 solve(nums) # true
+
+# binarysearch.io 'equivalent pairs'
+def solve(nums)
+        
+end
