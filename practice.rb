@@ -1280,3 +1280,5 @@ solve(nums, i, j) # 6
 
 # [1, 2, 3, 4, 3, 5, 7, 6, 9, 10]  <- unsorted
 # [1, 2, 3, 3, 4, 5, 6, 7, 9, 10]  <- sorted
+
+binarysearch.io
