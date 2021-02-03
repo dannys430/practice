@@ -211,3 +211,29 @@ const solve = (s) => {
 }
 s = "aaaabbbccdaa"
 solve(s) // "4a3b2c1d2a"
+
+// binarysearch.io 'strictly increasing or strictly decreasing'
+const solve = (nums) => {
+    if (nums.length < 2) return true
+    let increasing = null
+    for(let i = 0; i < nums.length; i++) {
+        let current = nums[i]
+        let next = nums[i+1]
+        if (next > current && (increasing === null || increasing === true)) {
+            increasing = true
+            continue
+        } else if (next < current && (increasing === null || increasing === false)) {
+            increasing = false
+            continue
+        } else if (next < current && increasing === true) {
+            return false
+        } else if (next > current && increasing === false) {
+            return false
+        } else if (current === next) {
+            return false
+        }
+    }
+    return true
+}
+nums = [1, 2, 3, 4, 5]
+solve(nums) // true
