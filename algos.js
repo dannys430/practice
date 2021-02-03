@@ -192,3 +192,22 @@ const solve = (n) => {
   return Math.max(...variations)
 }
 solve(123) // 323
+
+// binarysearch.io 'run length encoding'
+const solve = (s) => {
+    let answer = ''
+    let count = 1
+    for(let i = 0; i < s.length; i++) {
+        let current = s[i]
+        let next = s[i+1]
+        if (current === next) {
+            count += 1
+        } else {
+            answer += count.toString() + current
+            count = 1
+        }
+    }
+    return answer
+}
+s = "aaaabbbccdaa"
+solve(s) // "4a3b2c1d2a"
