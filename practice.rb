@@ -1281,4 +1281,20 @@ solve(nums, i, j) # 6
 # [1, 2, 3, 4, 3, 5, 7, 6, 9, 10]  <- unsorted
 # [1, 2, 3, 3, 4, 5, 6, 7, 9, 10]  <- sorted
 
-binarysearch.io
+# binarysearch.io 'list calculator'
+def solve(nums, op, val)
+    answer = []
+    nums.each do |num|
+        if op == '+'
+            answer.push(num + val)
+        elsif op == '-'
+            answer.push(num - val)
+        elsif op == '/'
+            answer.push(num / val)
+        elsif op == '*'
+            answer.push(num * val)
+        end
+    end
+    return answer     
+end
+solve([3, 1, 6], "+", 4) # [7, 5, 10]
