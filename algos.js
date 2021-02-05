@@ -239,7 +239,7 @@ let nums = [1, 2, 3, 4, 5]
 solve(nums) // true
 
 // binarysearch.io 'odd number of digits'
-solve(nums) {
+const solve = (nums) => {
     let count = 0
     for(let i = 0; i < nums.length; i++) {
         if (nums[i].toString().length % 2 !== 0) {
