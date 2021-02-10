@@ -250,3 +250,28 @@ const solve = (nums) => {
 }
 let nums = [1, 800, 2, 10, 3]
 solve(nums) // 4
+
+// binarysearch.io 'ugly number' partial solution
+const solve = (n) => {
+    if (n === 0) return false
+    const primeFactors = [2, 3, 5]
+    let firstIteration = true
+    for(let i = 2; i <= n; i++) { // 7
+        if (i === 2) {
+            firstIteration = false
+            n = n / 2
+            continue
+        }
+        if (n % i === 0) {
+            if (!primeFactors.includes(i) && this.prime(i)) return false
+        }
+    }
+    return true && primeFactors.includes(n)
+}
+
+const prime = (num) => {
+    for(let i = num - 1; i > 1; i--) {
+        if (num % i === 0) return false
+    }
+    return true
+}
