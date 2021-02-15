@@ -1298,3 +1298,15 @@ def solve(nums, op, val)
     return answer     
 end
 solve([3, 1, 6], "+", 4) # [7, 5, 10]
+
+# binarysearch.io 'odd number of digits' ruby solution
+def solve(nums)
+    count = 0
+    nums.each do |num|
+        if num.to_s.length % 2 != 0
+            count += 1
+        end
+    end
+    return count
+end
+solve([1, 800, 2, 10, 3])
