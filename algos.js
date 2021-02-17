@@ -275,3 +275,31 @@ const prime = (num) => {
     }
     return true
 }
+
+// binarysearch.io 'wolf of wall street' partial javascript solution
+const solve = (prices) => {
+    const pricesDuplicate = prices.slice()
+    const sorted = pricesDuplicate.sort(function(a, b) {return b - a})
+    if ((prices.length < 2) || (prices.toString() === sorted.toString())) {
+        return 0
+    }
+    let buyPrice = prices[0] //0
+    let sellPrice = prices[1] //2
+    let maxProfit = sellPrice - buyPrice  //1
+    let currentProfit = 0                 //-1
+    for (let i = 1; i < prices.length; i++) {
+        currentProfit = prices[i] - buyPrice //0-1 = -1
+    
+        if (currentProfit > maxProfit) {
+            maxProfit = currentProfit
+            sellPrice = prices[i]
+        }
+    
+        if (buyPrice > prices[i]) {
+            buyPrice = prices[i]
+        }
+    }
+    return sellPrice - buyPrice
+}
+prices = [1, 2, 0]
+solve(prices) // 2 (expected 1) WRONG ANSWER
