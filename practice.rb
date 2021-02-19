@@ -1310,3 +1310,17 @@ def solve(nums)
     return count
 end
 solve([1, 800, 2, 10, 3])
+
+# binarysearch.io 'boss fight' ruby solution
+def solve(fighters, bosses)
+    f_count = fighters.count(1)
+    return bosses.select {|sub_arr| sub_arr.count(1) >= f_count}
+end
+fighters = [0, 1, 1]
+bosses = [
+    [0, 0, 0],
+    [0, 0, 1],
+    [0, 1, 1],
+    [1, 1, 1]
+]
+solve(fighters, bosses) # [[0, 1, 1], [1, 1, 1]]
