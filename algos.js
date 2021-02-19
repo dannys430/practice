@@ -303,3 +303,22 @@ const solve = (prices) => {
 }
 prices = [1, 2, 0]
 solve(prices) // 2 (expected 1) WRONG ANSWER
+
+// binarysearch.io 'counting dinosaurs' javascript solution
+const solve = (animals, dinosaurs) => {
+    let count = 0
+    let hash = {}
+    for (let i = 0; i < animals.length; i++) {
+        if (dinosaurs.includes(animals[i])) {
+            if (hash[animals[i]] !== 'counted') {
+                let regex = new RegExp(animals[i], 'g');
+                count += animals.match(regex).length 
+            }
+            hash[animals[i]] = 'counted'
+        }
+    }
+    return count
+}
+animals = "abacabC"
+dinosaurs = "bC"
+solve(animals, dinosaurs) // 3
