@@ -339,3 +339,21 @@ const solve = (animals, dinosaurs) => {
 animals = "abacabC";
 dinosaurs = "bC";
 solve(animals, dinosaurs); // 3
+
+// binarysearch.io "remove last duplicate entries"
+const solve = (nums) => {
+  let freq = {}
+  for (let i = 0; i < nums.length; i++) {
+    freq[nums[i]] = freq[nums[i]] + 1 || 1
+  }
+
+  for (let i = nums.length - 1; i >= 0; i--) {
+    if (freq[nums[i]] > 1) {
+      freq[nums[i]] = 1
+      nums.splice(i, 1)
+    }
+  }
+  return nums
+}
+const nums = [1, 3, 4, 1, 3, 5]
+solve(nums) // [1, 3, 4, 5]
