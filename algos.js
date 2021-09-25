@@ -371,3 +371,20 @@ function twoNumberSum(array, targetSum) {
 	}
 	return []
 }
+
+// algoexpert.io 'two number sum' O(nLog(n)) time | O(1) space
+function twoNumberSum(array, targetSum) {
+  array.sort((a, b) => a - b)
+  let left = 0
+  let right = array.length - 1
+  while (left < right) {
+    if (array[left] + array[right] === targetSum) {
+      return [array[left], array[right]]
+    } else if (array[left] + array[right] > targetSum) {
+      right -= 1
+    } else if (array[left] + array[right] < targetSum) {
+      left += 1
+    }
+  }
+  return []
+}
