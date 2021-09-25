@@ -357,3 +357,17 @@ const solve = (nums) => {
 }
 const nums = [1, 3, 4, 1, 3, 5]
 solve(nums) // [1, 3, 4, 5]
+
+// algoexpert.io 'two number sum' - O(n) time | O(n) space
+function twoNumberSum(array, targetSum) {
+	const nums = {}
+	for(let i = 0; i < array.length; i++) {
+		const current = array[i]
+		if (nums[targetSum - current]) {
+			return [targetSum - current, current]
+		} else {
+			nums[current] = true
+		}
+	}
+	return []
+}
